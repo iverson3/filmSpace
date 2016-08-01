@@ -4,8 +4,12 @@
 import React from "react";
 import { createPubSub, PubSubProvider }  from 'react-pubsub'
 
+import Signal from 'signals'
+
 export default class Header extends React.Component {
     cutMenu() {
+
+
         // PubSub.publish('changeHeadTitle', "stefan");
         this.props.cutMenu();
         // 影视空间

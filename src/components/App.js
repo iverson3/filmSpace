@@ -7,6 +7,8 @@ import { createPubSub, PubSubProvider }  from 'react-pubsub'
 import Header from './Header'
 import Menu from './Menu'
 
+import Signal from 'signals'
+
 
 export default class App extends React.Component {
     constructor(props) {
@@ -35,14 +37,28 @@ export default class App extends React.Component {
     // 对于没有 父-子 关系的组件间的通信，你可以设置你自己的全局事件系统。
     // 在 componentDidMount() 里订阅事件，在 componentWillUnmount() 里退订，然后在事件回调里调用 setState()
     componentDidMount() {
-        this.pubsub_token = PubSubProvider.subscribe('changeHeadTitle', function(topic, title){
+        // this.pubsub_token = PubSubProvider.subscribe('changeHeadTitle', function(topic, title){
+        //     this.setState({
+        //         title: title
+        //     });
+        // }.bind(this));
+
+
+        //custom object that dispatch signals
+        var myObject = {
+            started : new Signal(),
+            stopped : new Signal()
+        };
+        myObject.started.add(function (title) {
             this.setState({
                 title: title
             });
-        }.bind(this));
+        }.bind(this)); //add listener
+        // myObject.started.dispatch('foo'); //dispatch signal passing custom parameters
+        // myObject.started.remove(onStarted); //remove a single listener
     }
     componentWillUnmount() {
-        PubSubProvider.unsubscribe(this.pubsub_token);
+        // PubSubProvider.unsubscribe(this.pubsub_token);
     }
 
     render() {
