@@ -5,6 +5,8 @@ import React from "react";
 import IndexFilm from './IndexFilm'
 import $ from 'jquery'
 
+const SERVER_URL = "http://yinhang.hustwenhua.net/wangfan/api/filmSpace_api/";
+
 export default class Index extends React.Component {
     constructor(props){
         super(props);
@@ -14,7 +16,7 @@ export default class Index extends React.Component {
         let that = this;
         $.ajax({
             type: 'get',
-            url : 'http://localhost/stefan/serverforreact/filmSpace/getFilms.php',
+            url : SERVER_URL + 'getFilms.php',
             dataType: 'jsonp',
             jsonp: "jsoncallback",
             success: function(data) {

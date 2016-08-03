@@ -5,6 +5,8 @@ import React from "react";
 import MenuLink from './MenuLink'
 import $ from 'jquery'
 
+const SERVER_URL = "http://yinhang.hustwenhua.net/wangfan/api/filmSpace_api/";
+
 export default class Menu extends React.Component {
     constructor(props){
         super(props);
@@ -15,7 +17,7 @@ export default class Menu extends React.Component {
         // 异步请求菜单列表数据
         $.ajax({
             type: 'get',
-            url : 'http://localhost/stefan/serverforreact/filmSpace/getMenus.php',
+            url : SERVER_URL + 'getMenus.php',
             dataType: 'jsonp',
             jsonp: "jsoncallback",
             success: function(data) {

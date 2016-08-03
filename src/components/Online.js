@@ -5,6 +5,8 @@ import React from "react";
 import $ from 'jquery'
 import OnlineFilm from './OnlineFilm'
 
+const SERVER_URL = "http://yinhang.hustwenhua.net/wangfan/api/filmSpace_api/";
+
 export default class Online extends React.Component {
     constructor(props){
         super(props);
@@ -15,7 +17,7 @@ export default class Online extends React.Component {
         // 异步请求菜单列表数据
         $.ajax({
             type: 'get',
-            url : 'http://localhost/stefan/serverforreact/filmSpace/getFilms.php?type=online',
+            url : SERVER_URL + 'getFilms.php?type=online',
             dataType: 'jsonp',
             jsonp: "jsoncallback",
             success: function(data) {
