@@ -43,7 +43,6 @@ export default class App extends React.Component {
         //     });
         // }.bind(this));
 
-
         //custom object that dispatch signals
         var myObject = {
             started : new Signal(),
@@ -61,6 +60,11 @@ export default class App extends React.Component {
         // PubSubProvider.unsubscribe(this.pubsub_token);
     }
 
+    menuClick(title) {
+        this.setState({
+            title: title
+        });
+    }
     render() {
         let classNameProp = "";
         if (this.state.isHide) {
@@ -71,7 +75,7 @@ export default class App extends React.Component {
         return (
             <div className="app">
                 <Header title={this.state.title} cutMenu={this.cutMenu.bind(this)} />
-                <Menu classNameProp={classNameProp} />
+                <Menu classNameProp={classNameProp} menuClick={this.menuClick.bind(this)} />
                 {this.props.children}
             </div>
         );
