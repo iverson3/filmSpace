@@ -11,14 +11,15 @@
   "keywords": [
     "film"
   ],
-  "author": "Stefan.wang",
+  "author": "Stefan.Wang",
   "license": "ISC",
   "dependencies": {
     "jquery": "^2.1.4",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
     "react-pubsub": "^0.5.0",
-    "react-router": "^2.0.0"
+    "react-router": "^2.0.0",
+    "react-slick": "^0.12.2"
   },
   "devDependencies": {
     "babel-core": "^6.2.1",

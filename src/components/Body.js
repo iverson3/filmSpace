@@ -37,7 +37,6 @@ export default class Body extends React.Component {
                 main = <Error />;
             }
         }
-
         return (<div className="body">
             {main}
         </div>);

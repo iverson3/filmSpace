@@ -22,10 +22,9 @@ li{
 .app{
     margin: 0px auto;
     padding: 0px auto;
-    /*background-color: yellow;*/
 }
 
-.header{
+.header-flex{
     height: 50px;
     background-color: black;
     position: fixed;
@@ -34,11 +33,13 @@ li{
     margin-right: 0px;
     padding-right: 0px;
 }
+.header{
+    z-index: 1000;
+    display: flex;
+}
 .header-menuicon{
-    float: left;
+    flex: 0 0 4.2%;
     background-color: #d83c3c;
-    width: 60px;
-    height: 26px;
     padding: 12px;
     font-size: 22px;
     font-weight: bolder;
@@ -46,25 +47,31 @@ li{
     color: white;
 }
 .header-title{
-    float: left;
-    width: auto;
+    flex: 0 0 70%;
     height: 50px;
+    text-align: center;
 }
 .header-title p{
-    margin-left: 550px;
     font-size: 25px;
     color: white;
     margin-top: 12px;
+    margin-left: 18%;
 }
 .header-search{
-    float: right;
+    flex: 0 0 20%;
     margin-top: 15px;
-    margin-right: 20px;
 }
+@media (max-width: 768px) {
+    .header-search{
+        display: none;
+    }
+}
+
+
 .menu{
     padding: 0px auto 0px 0px;
-    width: 200px;
-    height: 520px;
+    width: 124px;
+    height: 100%;
     background-color: #282828;
     color: gray;
     fontSize: 24px;
@@ -75,8 +82,8 @@ li{
 .menu-hide{
     display: none;
     padding: 0px auto 0px 0px;
-    width: 200px;
-    height: 520px;
+    width: 124px;
+    height: 100%;
     background-color: black;
     color: gray;
     fontSize: 24px;
@@ -90,7 +97,7 @@ li{
 .menu-item-p{
     padding-bottom: 15px;
     border-bottom: 1px solid orange;
-    padding-left: 20px;
+    padding-left: 15px;
 }
 .menu-link{
     color: white;
@@ -252,7 +259,15 @@ li{
     color: red;
     font-size: 20px;
 }
-
+/*轮播图片*/
+.slider-container{
+    width: 800px;
+    margin: 0 auto;
+}
+.slider-container img{
+    width: 800px;
+    z-index: 100;
+}
 
 
 
