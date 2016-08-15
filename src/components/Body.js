@@ -7,6 +7,7 @@ import Index from './Index'
 import Error from './Error'
 import FilmInfo from './FilmInfo'
 import FilmList from './FilmList'
+import Login from './Login'
 
 export default class Body extends React.Component {
     render() {
@@ -27,7 +28,7 @@ export default class Body extends React.Component {
             } else if(this.props.params.moduleName === 'cinema') {
 
             } else if(this.props.params.moduleName === 'home') {
-
+                main = <Login />;
             } else if(this.props.params.moduleName === 'ticket') {
 
             } else if(this.props.params.moduleName === 'filminfo') {
